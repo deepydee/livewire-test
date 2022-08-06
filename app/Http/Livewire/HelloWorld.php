@@ -2,18 +2,23 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Http\Request;
 use Livewire\Component;
 
 class HelloWorld extends Component
 {
     public $name = 'Jelly';
-    public $loud = false;
-    public $greeting = ['Hello'];
 
-    public function resetName($name = 'Chico')
+    public function mount($name)
     {
         $this->name = $name;
     }
+
+    public function updatedName($name)
+    {
+        $this->name = strtoupper($name);
+    }
+ 
 
     public function render()
     {
