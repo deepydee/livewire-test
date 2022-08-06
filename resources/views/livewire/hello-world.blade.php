@@ -6,5 +6,11 @@
 
     <hr>
 
+    <input wire:model='name' type="text">
+    <button wire:click="addContact()">Add</button>
+
     {{now()}}
+
+    <button wire:click="$emit('refreshChildren')">Refresh Children</button>
+
 </div>

@@ -8,6 +8,23 @@ use Livewire\Component;
 class SayHi extends Component
 {
     public $contacts;
+    // protected $listeners = ['refreshChildren' => 'refreshMe'];
+
+    // public function refreshMe($var)
+    // {
+    //     // dd($var);
+    // }
+    protected $listeners = ['refreshChildren' => '$refresh'];
+
+    public function refreshChildren()
+    {
+
+    }
+
+    public function emitFoo()
+    {
+        $this->emitUp('foo');
+    }
 
     public function mount(Contact $contact)
     {
